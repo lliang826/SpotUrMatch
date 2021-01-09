@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up • SpotUrVibe</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Custom styles -->
+    <link href="../styles/signup.css" rel="stylesheet">
+</head>
+
+<body class="d-flex text-primary">
+    <div class="bg-primary w-50 vh-100">
+        <h1 class="text-center">SpotUrVibe</h1>
+    </div>
+    <div class="bg-secondary w-50 vh-100">
+        <form id="signUp" class="d-flex flex-column container">
+            <h1>Sign Up</h1>
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Email" required>
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Username" required pattern="[A-Za-z0-9]{3,20}">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" required pattern="[A-Za-z0-9]{6,20}">
+            <label for="confirm">Confirm password</label>
+            <input type="password" name="confirm" placeholder="Password" required pattern="[A-Za-z0-9]{6,20}">
+            <label for="artist1">Choose a favourite artist</label>
+            <input type="text" name="artist1" placeholder="Favourite artist" required>
+
+            <div>
+                <button type="button" class="button-primary w-25">Cancel</button>
+                <button type="submit" class="button-primary w-25">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+    <!-- Firebase API key information -->
+    <script src="../scripts/firebase_api.js"></script>
+
+    <!-- Custom JavaScript functions -->
+    <script src="../scripts/signup.js"></script>
+
+</body>
+
+</html>

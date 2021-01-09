@@ -1,0 +1,21 @@
+.search-field-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 100px;
+}
+
+.search-bar {
+    margin-right: 5px;
+}
+
+.or {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.use-fav-artist-button {
+    text-align: center;
+}

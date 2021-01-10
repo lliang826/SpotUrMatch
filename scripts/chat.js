@@ -15,16 +15,19 @@ function foo() {
 }*/
 
 window.onload = function () {
+    console.log("loaded");
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).get().then(function(doc) {
-            var matches = doc.data().groups.length;
-            for (var i = 0; i < matches; i++) {
+            var groups = doc.data().group;
+            console.log(groups);
+            for (var i = 0; i < groups.length; i++) {
                 var newDiv = document.createElement('div');
                 newDiv.addClass('userMatches');
-                newDiv.id = doc.data().groups[i];
+                newDiv.id = doc.data().group[i];
             }
         })
     })
+    console.log("complete");
 }
 
 
@@ -55,28 +58,7 @@ function messageClear() {
 }*/
 
 
-var btn1 = document.getElementById("matchedUserBtn1");
-var btn2 = document.getElementById("matchedUserBtn2");
 
-btn1.onclick = function () {
-    if (btn2.hasClass('active')) {
-        btn2.removeClass('active');
-        btn1.addClass('active');
-        messagePull();
-    } else {
-        btn1.addClass('active');
-    }
-}
-
-btn2.onclick = function () {
-    if (btn1.hasClass('active')) {
-        btn1.removeClass('active');
-        btn2.addClass('active');
-        messagePull();
-    } else {
-        btn2.addClass('active');
-    }
-}
 
 function messagePull() {
     $(msgScreen).empty();

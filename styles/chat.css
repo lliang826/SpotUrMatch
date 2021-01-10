@@ -19,14 +19,14 @@ body {
   }
 
   #chatborder {
-    
+
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: -10px;
     padding-bottom: 10px;
     border-radius: 10px;
-    min-height: 85vh;
-    max-height: 85vh;
+    min-height: 80vh;
+    max-height: 80vh;
     overflow-y: scroll;
   }
 

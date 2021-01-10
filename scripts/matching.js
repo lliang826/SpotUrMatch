@@ -121,7 +121,7 @@ function checkIfButtonDisable() {
     } else {
         document.getElementById("buttonLeft").disabled = true;
     }
-    if (i != usernameList.length - 1) {
+    if (i != usernameList.length - 1 && usernameList.length != 0) {
         document.getElementById("buttonRight").disabled = false;
     } else {
         document.getElementById("buttonRight").disabled = true;

@@ -95,7 +95,7 @@ function updateUser() {
         $("#no-recommended").html("This user recommends:");
         document.getElementById("spotify-replacement").src = recommended1List[i];
     } else {
-        $("#no-recommended").html("This user does not recommend anything.");
+        $("#no-recommended").html("This user has no recommendations.");
         document.getElementById("spotify-replacement").src = "";
     }
 }

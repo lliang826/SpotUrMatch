@@ -10,13 +10,25 @@ auth.onAuthStateChanged(token => {
     }
 });
 
-// Gets the user's search string.
+// Gets the user's search string using search button.
 $("#searchClick").on("click", event => {
     db.collection("users").doc(userLoggedIn.uid).update({
         lastSearch: document.getElementById("artistField").value
     }).then(event => {
         location.href = "matching.html";
     });
+});
+
+// Gets the user's search string usinig the enter key.
+$("#artistField").keypress(function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        db.collection("users").doc(userLoggedIn.uid).update({
+            lastSearch: document.getElementById("artistField").value
+        }).then(event => {
+            location.href = "matching.html";
+        });
+    }
 });
 
 // Uses the user's fav artist1.

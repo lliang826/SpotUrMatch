@@ -15,6 +15,10 @@
 <body class="d-flex text-primary">
     <div class="bg-primary w-50 vh-100">
         <h1 class="text-center">SpotUrVibe</h1>
+        <img src="../img/singing.svg" id="singingIcon" alt="singingIcon">
+        <p>SpotUrVibe is a social media site that allows you to connect with people with similar music tastes!
+            Join millions of other users for free today!
+        </p>
     </div>
     <div class="bg-secondary w-50 vh-100">
         <form id="signUp" class="d-flex flex-column container">
@@ -32,9 +36,11 @@
             <label for="recommended1">Recommend a song or playlist from Spotify!</label>
             <input type="text" name="recommended1" placeholder="Spotify song/playlist link" required>
 
-            <div>
-                <button type="button" class="button-primary w-25">Cancel</button>
-                <button type="submit" class="button-primary w-25">Sign Up</button>
+            <div id="buttons">
+                <button type="submit" id="signUpButton" class="button-primary w-25">Sign Up</button>
+                <br><br><br><br>
+                <p>If you already have an account, sign in here!</p>
+                <button type="button" id="signInButton" onclick="location.href='signin.html'" class="button-primary w-25">Sign In</button>
             </div>
         </form>
     </div>

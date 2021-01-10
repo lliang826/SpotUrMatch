@@ -34,15 +34,15 @@
     margin-top: 10%;
 }
 
-input[type=text]:focus {
+#signUp input[type=text]:focus {
     border: 3px solid black;
 }
 
-input[type=password]:focus {
+#signUp input[type=password]:focus {
     border: 3px solid black;
 }
 
-input[type=text], [type=password] {
+#signUp input[type=text], [type=password] {
     width: 100%;
     display: inline-block;
     border: 1px solid rgb(0, 0, 0);
@@ -58,8 +58,25 @@ input[type=text], [type=password] {
     border: 2px solid black;
 }
 
+/* Sign in styling starts here */
+
+#signIn {
+    background-color: black;
+    color: white;
+    padding-left: 55%;
+    font-family: 'Acme', sans-serif;
+}
+
+#signIn input[type=text], [type=password]{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 5%;
+}
+
 #signInButton {
     background-color: grey;
     border-radius: 12px;
     border: 2px solid black;
 }
+

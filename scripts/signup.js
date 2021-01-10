@@ -30,5 +30,6 @@ login.addEventListener("submit", event => {
 
     auth.signInWithEmailAndPassword(email, password).then(account => {
         console.log(account.user.uid);
+        location.href = "homepage.html";
     });
 });

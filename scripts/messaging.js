@@ -15,15 +15,17 @@ function foo() {
     
 }*/
 
-msgBtn.onclick = function() {
+function addMessage() {
     message = document.getElementById("msg-input").value;
-    console.log(message);
-    let data = {
-        messages: [message]
-    };
-    console.log("heard");
-    db.collection("msgs").doc("chatTest").set(data);
+    
+    db.collection("msgs").doc("chatTest").update({
+        messages: firebase.firestore.FieldValue.arrayUnion(message)
+    });
     clearText();
+}
+
+msgBtn.onclick = function() {
+    addMessage();
 }
 
 function clearText() {

@@ -1,3 +1,4 @@
+
 const msgScreen = document.getElementById("messages")
 const msgForm = document.getElementById("messageForm");
 const msgInput = document.getElementById("msg-input");
@@ -14,13 +15,15 @@ function foo() {
     
 }*/
 
-msgForm.addEventListener('submit', sendMessage);
-
-function sendMessage(e) {
-    var message = msgInput.innerText;
+msgBtn.onclick = function() {
+    message = document.getElementById("msg-input").value;
     let data = {
-        messages: ["hello"]
+        messages: [message]
     };
-    console.log("heard");
     db.collection("msgs").doc("chatTest").set(data);
+    clearText();
+}
+
+function clearText() {
+    document.getElementById("msg-input").placeholder = "";
 }

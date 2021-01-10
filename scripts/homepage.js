@@ -19,13 +19,8 @@ $("#searchClick").on("click", event => {
     });
 });
 
-<<<<<<< HEAD
-// Gets the user's search string usinig the enter key.
-$("#artistField").keypress(function(event) {
-=======
 // Gets the user's search string using the enter key.
 $("#artistField").keypress(function (event) {
->>>>>>> 08395857b248b0520f54278ede84ff88af6b87cb
     if (event.key === "Enter") {
         event.preventDefault();
         db.collection("users").doc(userLoggedIn.uid).update({

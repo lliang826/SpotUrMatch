@@ -14,12 +14,11 @@ function foo() {
     
 }*/
 
-msgForm.addEventListener('submit', sendMessage);
-
-function sendMessage(e) {
-    var message = msgInput.innerText;
+msgBtn.onclick = function() {
+    message = document.getElementById("msg-input").value;
+    console.log(message);
     let data = {
-        messages: ["hello"]
+        messages: [message]
     };
     console.log("heard");
     db.collection("msgs").doc("chatTest").set(data);

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
 #foo {
     background-color: #191919;
 }
@@ -23,7 +25,7 @@
     width: 100%;
 
     grid-column: 4 / span 1;
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
 }
 
 #username {
@@ -40,12 +42,12 @@
     text-align: right;
 
     grid-column: 3 / span 2;
-    grid-row: 3 / span 1;
+    grid-row: 4 / span 1;
 }
 
 #addMessage {
     grid-column: 4 / span 1;
-    grid-row: 4 / span 1;
+    grid-row: 5 / span 1;
 }
 
 #buttonLeft {
@@ -61,13 +63,18 @@
 }
 
 #spotify-widget-container {
-    margin-top: 80px;
-    text-align: center;
     grid-column: 6 / span 1;
-    grid-row: 3 / span 2;
+    grid-row: 2 / span 2;
 }
 
 .spotify-widget {
     width: 40vmin;
     height: 60vmin;
+}
+
+#no-recommended {
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: white;
+    font-size: 15pt;
+    margin-bottom: 10px;
 }

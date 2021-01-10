@@ -11,3 +11,7 @@ db.collection("users").where("artist1", "==", "smash mouth").get().then(snap => 
     render(doc);
   });
 });
+
+var userRecommended = user.recommended1;
+
+db.collection("users").where("recommended1", "==", userRecommended).get().then(function)

@@ -41,9 +41,10 @@ db.collection("users").where("artist1", "==", "smash mouth").get().then(snap => 
     updateUser();
 });
 
+// Pulls the user recommended link from Firebase.
 var userRecommended = user.recommended1;
 
-db.collection("users").where("recommended1", "==", userRecommended).get().then(function() {})
+db.collection("users").where("recommended1", "==", userRecommended).get().then(function(querySnapshot) {})
 
 // "Next" button handler.
 $("#buttonRight").on("click", event => {

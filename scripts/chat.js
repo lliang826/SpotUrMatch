@@ -5,7 +5,7 @@ const matches = document.getElementById("connectionsList");
 Create a function that reads the user's name from Firebase
 let name="";
 function foo() {
-    
+
 }*/
 
 window.onload = function () {
@@ -16,11 +16,16 @@ window.onload = function () {
                 var newAnchor = document.createElement('a');
                 newAnchor.href = "#";
                 var newDiv = document.createElement('div');
+<<<<<<< HEAD
                 newDiv.id = snap.data().group[i];
                 newDiv.classList.add('userMatches');
                 newAnchor.append(newDiv);
                 matches.append(newAnchor);
                 userInfoPull(snap.data().group[i], snap.data().username);
+=======
+                newDiv.addClass('userMatches');
+                newDiv.id = groups[i];
+>>>>>>> 9ad1d9ccabb61dec0d6b3c043a1fdd6f734595c2
             }
         })
     })

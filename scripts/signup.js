@@ -1,5 +1,7 @@
-// The sign up form.
+// The sign up and sign in forms.
 const form = document.querySelector("#signUp");
+const login = document.querySelector("#login");
+
 
 // When the form is submitted, write to firebase auth and put an account into the users collection.
 form.addEventListener("submit", event => {
@@ -18,5 +20,15 @@ form.addEventListener("submit", event => {
     }).catch(error => {
         console.log(error.code);
         console.log(error.message);
+    });
+});
+
+login.addEventListener("submit", event => {
+    event.preventDefault();
+    const email = login.email.value;
+    const password = login.password.value;
+
+    auth.signInWithEmailAndPassword(email, password).then(account => {
+        console.log(account.user.uid);
     });
 });

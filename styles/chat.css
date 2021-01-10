@@ -1,39 +1,38 @@
 body {
     font: 15px arial, sans-serif;
-    background-color: #d9d9d9;
+    background-color:  #191919;
   }
   
   #bodybox {
     margin: auto;
-    margin-top: 10%;
     width: 60%;
     float:right;
     max-width: 800px;
+    min-height: 50vh;
     font: 15px arial, sans-serif;
-    background-color: white;
-    border-style: solid;
-    border-width: 1px;
     padding-top: 20px;
     padding-bottom: 25px;
     padding-right: 25px;
     padding-left: 25px;
-    box-shadow: 5px 5px 5px grey;
-    border-radius: 15px;
+    overflow: hidden;
   }
   
   #chatborder {
     border-style: solid;
     background-color: #f6f9f6;
     border-width: 3px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-right: 20px;
-    padding-left: 15px;
-    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    min-height: 45vh;
+    max-height: 45vh;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+      display: none;
   }
   
   .chatlog {
@@ -44,6 +43,11 @@ body {
     font: 17px arial, sans-serif;
     height: 22px;
     width: 100%;
+    border-radius: 10px;
+  }
+
+  #chatbox::placeholder {
+      padding-left: 2%;
   }
   
   h1 {
@@ -51,18 +55,92 @@ body {
   }
 
 #connectionsList {
-    width: 35%;
-    height: 100%;
-    background-color: blue;
+    width: 30%;
+    margin-top: 2%;
     float:left;
-}
 
-
-.active{
-    background-color: yellow;
 }
 
 a {
     text-decoration-line: none;
     color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.yourMessages {
+    color: white;
+    margin-left: 75%;
+    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    background-attachment: fixed;
+    position: relative;
+    align-items: flex-start;
+    right: 5%;
+}
+
+.theirMessages {
+    align-items: flex-end;
+    color: rgb(0, 0, 0);
+    margin-right: 85%;
+    background: linear-gradient(to bottom, #c1e9ee 0%, #94ccec 100%);
+    background-attachment: fixed;
+    position: relative;
+    left: -5%;
+}
+
+.userMatches {
+    margin-bottom: 2%;
+    padding-bottom: 15%;
+    border-bottom: 1px solid white;
+    background-color: #25274D;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+}
+
+.userMatches:hover {
+    position: relative;
+  left: 8%;
+  transition: 0.4s ease-out;
+}
+
+h3 {
+    margin: 0;
+    padding-top: 2%;
+}
+
+a:hover {
+    text-decoration-line: none;
+    color: white;
+}
+
+#submit {
+    margin-top: 1%;
+    float: right;
+    border-radius: 20px;
+    border-style: none;
+    width: 90px;
+    height: 20px;
+    color: #3eb759;
+}
+
+#submit:hover {
+    color: white;
+    background-color: #7bcf8e;
 }

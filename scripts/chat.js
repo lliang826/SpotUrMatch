@@ -15,6 +15,7 @@ function renderContacts() {
     console.log("loaded");
 
     db.collection("users").doc(userLoggedIn.uid).get().then(function(snap) {
+        console.log(userLoggedIn.uid);
         for (var i = 0; i < snap.data().group.length; i++) {
             let contactAnchor = document.createElement('a');
             contactAnchor.href = "#";
@@ -30,7 +31,7 @@ function renderContacts() {
                 $("#messages").html("");
                 console.log(contactDiv.id);
                 currentGroup = contactDiv.id;
-                renderChat(contactDiv.id);
+                renderChat(contactDiv.id, userLoggedIn.uid);
             };
         }
     })
@@ -53,17 +54,30 @@ function userInfoPull(groupID, username) {
         })
 }
 
-function renderChat(groupID) {
+function renderChat(groupID, username) {
     console.log(groupID);
     db.collection("groups").doc(groupID).collection("msgs").get().then(snap => {
         snap.forEach(doc => {
             console.log("here!");
-            $("#messages").append("<li>" + doc.data().msg + "</li>");
+            var msgHistory = document.createElement('li');
+            msgHistory.innerText = doc.data().msg;
+            console.log(username);
+            console.log(doc.data().sender);
+            if (doc.data().sender == username) {
+                msgHistory.classList.add('yourMessages');
+            } else {
+                msgHistory.classList.add('theirMessages');
+            }
+            $("#messages").append(msgHistory);
         });
     });
 };
 
 $("#submit").on("click", event => {
+    newMessage();
+});
+
+function newMessage() {
     message = document.getElementById("chatbox").value;
 
     const increment = firebase.firestore.FieldValue.increment(1);
@@ -79,32 +93,18 @@ $("#submit").on("click", event => {
         });
     });
 
-    $("#messages").append("<li>" + message + "</li>");
+    var yourMsg = document.createElement('li')
+    yourMsg.classList.add('yourMessages');
+    yourMsg.innerText = message;
+    $("#messages").append(yourMsg);
+
     document.getElementById("chatbox").value = "";
+}
+
+$("#chatbox").keypress(function (event) {
+    
+    var key = (event.keyCode || event.which);
+    if (key == 13) {
+        newMessage();
+    }
 });
-
-/*
-msgBtn.onclick = function () {
-    addMessage();
-}
-
-function clearText() {
-
-}
-
-window.onbeforeunload = messageClear;
-
-function messageClear() {
-    db.collection("msgs").doc("chatTest").update({
-        messages: firebase.firestore.
-    })
-}
-
-
-
-
-function messagePull() {
-    $(msgScreen).empty();
-
-}
-*/

@@ -2,17 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Messaging Page</title>
+    <title>Settings • SpotUrVibe</title>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../styles/chat.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/settings.css">
 </head>
 
 <body>
+    <!-- Bootstrap navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SpotUrVibe</a>
@@ -30,18 +35,24 @@
         </div>
     </nav>
 
-    <div id="connectionsList">
-    </div>
-    
-    <div id='bodybox'>
-        <div id='chatborder'>
-          <ul id="messages">
-              <li>Kick off the convo by asking about their favourite artist!</li>
-          </ul>
-        </div>
-        <input type="text" name="chat" id="chatbox" placeholder="Type here">
-        <button id="submit">Submit</button>
-    </div>
+    <div class="for-font">
+
+        <!-- Search form -->
+        <form id="settingsForm" class="d-flex flex-column container">
+            <div class="description mt-5 mb-4">Enter up to three artists for people to find you</div>
+            <input id="artist1" class="form-control mb-3" type="text" placeholder="Favourite artist" required>
+            <input id="artist2" class="form-control mb-3" type="text" placeholder="Favourite artist">
+            <input id="artist3" class="form-control" type="text" placeholder="Favourite artist">
+
+            <div class="description mt-5 mb-2">Enter up to three Spotify song or playlist links for people to listen</div>
+            <div class="lead text-center mb-4">Example: https://open.spotify.com/track/xxxxxxxxxx?xx=xxxxxxxxxx</div>
+
+            <input id="link1" class="form-control mb-3" type="text" placeholder="Spotify link">
+            <input id="link2" class="form-control mb-3" type="text" placeholder="Spotify link">
+            <input id="link3" class="form-control mb-4" type="text" placeholder="Spotify link">
+            <button id="save" type="submit" class="btn w-100 btn-text">Save changes</button>
+        </form>
+        <div id="success" class="description mt-3"></div>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -57,12 +68,15 @@
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+     <!-- Add Firebase products that you want to use -->
+     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
 
+    <!-- Firebase API key information -->
     <script src="../scripts/firebase_api.js"></script>
-    <script src="../scripts/chat.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="../scripts/settings.js"></script>
 </body>
 
 </html>

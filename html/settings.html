@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Settings • SpotUrVibe</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/settings.css">
+</head>
+
+<body>
+    <!-- Bootstrap navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SpotUrVibe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="#">Settings</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="for-font">
+
+        <!-- Search form -->
+        <form id="settingsForm" class="d-flex flex-column container">
+            <div class="description mt-5 mb-4">Enter up to three artists for people to find you</div>
+            <input id="artist1" class="form-control mb-3" type="text" placeholder="Favourite artist">
+            <input id="artist2" class="form-control mb-3" type="text" placeholder="Favourite artist">
+            <input id="artist3" class="form-control" type="text" placeholder="Favourite artist">
+
+            <div class="description mt-5 mb-2">Enter up to three Spotify song or playlist links for people to listen</div>
+            <div class="lead text-center mb-4">Example: https://open.spotify.com/track/xxxxxxxxxx?xx=xxxxxxxxxx</div>
+
+            <input id="link1" class="form-control mb-3" type="text" placeholder="Spotify link">
+            <input id="link2" class="form-control mb-3" type="text" placeholder="Spotify link">
+            <input id="link3" class="form-control mb-4" type="text" placeholder="Spotify link">
+            <button id="save" type="submit" class="btn w-100 btn-text">Save changes</button>
+        </form>
+        <div id="success" class="description mt-3"></div>
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+     <!-- Add Firebase products that you want to use -->
+     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+    <!-- Firebase API key information -->
+    <script src="../scripts/firebase_api.js"></script>
+
+    <!-- Custom Javascript -->
+    <script src="../scripts/settings.js"></script>
+</body>
+
+</html>

@@ -8,7 +8,18 @@
 </head>
 
 <body>
-    <!-- Previous Chat HTML
+    <!-- HTML from the previous chat
+        
+    <div id="connectionsList">
+        <div id="matchedUser1">
+            <h1>Name here (user 1)</h1>
+            <button id="matchedUser1Btn" type="button">Message</button>
+        </div>
+        <div id="matchedUser2">
+            <h1>Name here (user 2)</h1>
+            <button id="matchedUser2Btn" type="button">Message</button>
+        </div>
+    </div>
     <div class="chat">
         <div class="chat-window" id="chat-window">
             <ul id="messages">
@@ -39,6 +50,10 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
@@ -47,7 +62,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
 
     <script src="../scripts/firebase_api.js"></script>
-    <script src="../scripts/messaging.js"></script>
+    <script src="../scripts/chat.js"></script>
 </body>
 
 </html>

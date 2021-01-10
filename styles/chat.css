@@ -50,7 +50,66 @@ body {
     margin: auto;
   }
   
+<<<<<<< HEAD
   pre {
     background-color: #f0f0f0;
     margin-left: 20px;
   }
+=======
+/* Track */
+#chat-window::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 20px;
+}
+
+/* Handle */
+#chat-window::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 5px grey; 
+    background:rgb(82, 196, 133);
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+#chat-window::-webkit-scrollbar-thumb:hover {
+    background:rgb(5, 190, 144); 
+}
+
+.logo{
+    width: 160px;
+    height: 160px;
+}
+
+.center-logo{
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#collectionsList {
+    width: 35%;
+    height: 100%;
+    background-color: blue;
+    float:left;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#matchedUser1 {
+    border-right: 1px solid black;
+    width: 35%;
+    grid-row: 1;
+}
+
+#matchedUser2 {
+    border-right: 1px solid black;
+    width: 35%;
+    grid-row: 2;
+}
+
+.active{
+    background-color: yellow;
+}
+>>>>>>> 5caefe4ade462b54df2e3a31cb06af5ed072a76b

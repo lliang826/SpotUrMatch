@@ -28,19 +28,23 @@ auth.onAuthStateChanged(token => {
                 snap.forEach(doc => {
                     queueUser(doc);
                 });
+                checkIfButtonDisable();
+                updateUser();
             });
             db.collection("users").where("artist2", "==", userSearch).get().then(snap => {
                 snap.forEach(doc => {
                     queueUser(doc);
                 });
+                checkIfButtonDisable();
+                updateUser();
             });
             db.collection("users").where("artist3", "==", userSearch).get().then(snap => {
                 snap.forEach(doc => {
                     queueUser(doc);
                 });
+                checkIfButtonDisable();
+                updateUser();
             });
-            checkIfButtonDisable();
-            updateUser();
         }
     });
 });

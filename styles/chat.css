@@ -7,10 +7,9 @@ body {
 
   #bodybox {
     margin: auto;
-    width: 60%;
+    width: 70%;
     float:right;
-    max-width: 800px;
-    min-height: 50vh;
+    min-height: 70vh;
     font: 15px arial, sans-serif;
     padding-top: 20px;
     padding-bottom: 25px;
@@ -20,16 +19,14 @@ body {
   }
 
   #chatborder {
-    border-style: solid;
-    background-color: #f6f9f6;
-    border-width: 3px;
+    
     margin-bottom: 10px;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: -10px;
     padding-bottom: 10px;
     border-radius: 10px;
-    min-height: 45vh;
-    max-height: 45vh;
+    min-height: 85vh;
+    max-height: 85vh;
     overflow-y: scroll;
   }
 
@@ -43,7 +40,7 @@ body {
 
   #chatbox {
     font: 17px arial, sans-serif;
-    height: 22px;
+    height: 30px;
     width: 100%;
     border-radius: 10px;
   }
@@ -85,22 +82,24 @@ ul li {
 
 .yourMessages {
     color: white;
-    margin-left: 75%;
-    background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+    margin-left: 65%;
+    background: linear-gradient(to bottom, #464866 0%, #196329 100%);
     background-attachment: fixed;
     position: relative;
     align-items: flex-start;
     right: 5%;
+    font-weight: 600;
 }
 
 .theirMessages {
     align-items: flex-end;
     color: rgb(0, 0, 0);
-    margin-right: 85%;
-    background: linear-gradient(to bottom, #c1e9ee 0%, #94ccec 100%);
+    margin-right: 65%;
+    background: linear-gradient(to bottom, #e9e0e3 0%, #708ea1 100%);
     background-attachment: fixed;
     position: relative;
     left: -5%;
+    font-weight: 600;
 }
 
 .userMatches {
@@ -114,6 +113,14 @@ ul li {
     transition: 0.4s ease-out;
     position: relative;
     left: 0px;
+    max-width: 300px;
+    min-width: 250px;
+    max-height: 100px;
+    min-height: 80px;
+}
+
+.userMatches h3 {
+    transform: translate(50%, 50%);
 }
 
 .userMatches:hover {

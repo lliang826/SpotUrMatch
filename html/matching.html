@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Matching Page</title>
+    <title>Matching Page • SpotUrVibe</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,19 +38,21 @@
             <!-- Put the user profile picture and information here -->
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum alias unde numquam enim ex iusto, cum
                 atque, harum autem voluptatem totam, maiores sunt possimus? Quidem, nobis beatae! Ut, nemo odio.</p>
+                <span id="username"></span>
         </div>
 
         <div id="songs">
             <!-- Put the song selections here -->
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere illum odio beatae, tenetur minima
-                exercitationem eveniet? Numquam quas adipisci, voluptas deleniti ratione suscipit distinctio ipsa hic,
-                debitis impedit, obcaecati pariatur!</p>
+            <p>This person likes:</p>
+            <span id="artist1"></span>
+            <span id="artist2"></span>
+            <span id="artist3"></span>
         </div>
 
         <button type="button" id="buttonLeft" class="btn btn-outline-success waves-effect">Success</button>
 
         <button type="button" id="buttonRight" class="btn btn-outline-danger waves-effect">Danger</button>
-        
+
     </div>
 
     <!-- Bootstrap Scripts -->
@@ -63,6 +65,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+    <!-- Firebase API key information -->
+    <script src="../scripts/firebase_api.js"></script>
+
+    <!-- Custom JavaScript functions -->
+    <script src="../scripts/matching.js"></script>
 </body>
 
 </html>

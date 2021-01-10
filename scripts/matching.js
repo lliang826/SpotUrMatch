@@ -1,13 +1,23 @@
 // The index of the current user. This keeps track of which user is currently being displayed on the page.
 var i = 0;
 
+const uidList = [];
 const usernameList = [];
 const artist1List = [];
 const artist2List = [];
 const artist3List = [];
 const recommended1List = [];
 
+// If logged in, gets the currently logged in user and sets it to a variable.
+var userLoggedIn;
+auth.onAuthStateChanged(token => {
+    if (token) {
+        userLoggedIn = token;
+    }
+});
+
 function queueUser(doc) {
+    uidList.push(doc.id);
     usernameList.push(doc.data().username);
     artist1List.push(doc.data().artist1);
 
@@ -97,6 +107,7 @@ function checkIfButtonDisable() {
 // "Message" button handler. Adds the currently shown user to the user's messaging system.
 $("#addMessage").on("click", event => {
     db.collection("groups").doc().set({
-        test: 5
+        user1: userLoggedIn.uid,
+        user2: uidList[i]
     });
 });

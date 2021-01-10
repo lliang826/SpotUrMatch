@@ -9,7 +9,8 @@ form.addEventListener("submit", event => {
     auth.createUserWithEmailAndPassword(email, password).then(token => {
         return db.collection("users").doc(token.user.uid).set({
             username: form.username.value,
-            artist1: form.artist1.value
+            artist1: form.artist1.value,
+            recommended1: form.recommended1.value
         });
     }).then(token => {
         form.reset();

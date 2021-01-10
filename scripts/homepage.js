@@ -19,8 +19,13 @@ $("#searchClick").on("click", event => {
     });
 });
 
+<<<<<<< HEAD
+// Gets the user's search string usinig the enter key.
+$("#artistField").keypress(function(event) {
+=======
 // Gets the user's search string using the enter key.
 $("#artistField").keypress(function (event) {
+>>>>>>> 08395857b248b0520f54278ede84ff88af6b87cb
     if (event.key === "Enter") {
         event.preventDefault();
         db.collection("users").doc(userLoggedIn.uid).update({
@@ -33,11 +38,18 @@ $("#artistField").keypress(function (event) {
 
 // Gets the user's artist1.
 $("#useClick").on("click", event => {
-    db.collection("users").doc(userLoggedIn.uid).get().then(function (doc) {
+    db.collection("users").doc(userLoggedIn.uid).get().then(function(doc) {
         db.collection("users").doc(userLoggedIn.uid).update({
             lastSearch: doc.data().artist1
         }).then(event => {
             location.href = "matching.html";
         });
     });
+});
+
+const signOut = document.querySelector("#signOut");
+signOut.addEventListener("click", event => {
+    event.preventDefault();
+    auth.signOut();
+    console.log("User signed out.");
 });

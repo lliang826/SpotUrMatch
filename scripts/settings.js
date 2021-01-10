@@ -44,3 +44,10 @@ form.addEventListener("submit", event => {
     $("#success").html("Your settings have been saved!");
     form.reset();
 });
+
+const signOut = document.querySelector("#signOut");
+signOut.addEventListener("click", event => {
+    event.preventDefault();
+    auth.signOut();
+    console.log("User signed out.");
+});

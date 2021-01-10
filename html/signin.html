@@ -54,11 +54,11 @@
         location.href = "homepage.html";
       });
     });
-
+const signOut = document.querySelector("#signOut");
     signOut.addEventListener("click", event => {
       event.preventDefault();
       auth.signOut();
-      console.log("user signed out");
+      console.log("User signed out.");
     });
   </script>
 </body>

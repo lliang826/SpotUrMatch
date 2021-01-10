@@ -100,10 +100,17 @@ function newMessage() {
     document.getElementById("chatbox").value = "";
 }
 
-$("#chatbox").keypress(function (event) {
-    
+$("#chatbox").keypress(function(event) {
+
     var key = (event.keyCode || event.which);
     if (key == 13) {
         newMessage();
     }
+});
+
+const signOut = document.querySelector("#signOut");
+signOut.addEventListener("click", event => {
+    event.preventDefault();
+    auth.signOut();
+    console.log("User signed out.");
 });

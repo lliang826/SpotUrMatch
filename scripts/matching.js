@@ -143,3 +143,10 @@ $("#addMessage").on("click", event => {
         db.collection("groups").doc(doc.id).collection("msgs").set({});
     });
 });
+
+const signOut = document.querySelector("#signOut");
+signOut.addEventListener("click", event => {
+    event.preventDefault();
+    auth.signOut();
+    console.log("User signed out.");
+});

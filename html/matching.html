@@ -41,7 +41,7 @@
 
         <div id="songs">
             <!-- Put the song selections here -->
-            <p>This user recommends:</p>
+            <p>This user also likes:</p>
             <span id="artist1"></span>
             <span id="artist2"></span>
             <span id="artist3"></span>
@@ -50,12 +50,16 @@
         <button type="button" id="buttonLeft" class="btn btn-outline-success waves-effect" disabled>Success</button>
 
         <button type="button" id="buttonRight" class="btn btn-outline-danger waves-effect" disabled>Danger</button>
+
+        <button type="button" id="addMessage" class="btn btn-outline-danger waves-effect">Message</button>
     </div>
 
     <!-- Spotify Widget for recommended songs -->
-    <div id="spotify-widget-container">
-        <iframe class="spotify-widget" id="spotify-replacement" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO1LtRY3"
-            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    <div class="d-flex flex-column" id="spotify-widget-container">
+        <span id="no-recommended">This user recommends:</span>
+        <div><iframe class="spotify-widget" id="spotify-replacement" src=""
+            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
     </div>
 
     <!-- Bootstrap Scripts -->

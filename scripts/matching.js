@@ -24,22 +24,21 @@ function queueUser(doc) {
     }
 
     if (doc.get("recommended1") != null) {
-      var userRecommended1 = doc.data().recommended1;
+        var userRecommended1 = doc.data().recommended1;
 
-      for (stringLength = 0; stringLength < userRecommended1.length - 2; stringLength++) {
-        
-        if (userRecommended1.charAt(stringLength) == "c"
-        && userRecommended1.charAt(stringLength + 1) == "o"
-        && userRecommended1.charAt(stringLength + 2) == "m") {
-          
-          var newEmbed = userRecommended1.substring(0, stringLength + 4) + "embed/" + userRecommended1.substring(stringLength + 4);
+        for (stringLength = 0; stringLength < userRecommended1.length - 2; stringLength++) {
 
-          recommended1List.push(newEmbed);
-          console.log("Array reccomended: " + recommended1List[i]);
-        } else {
-          recommended1List.push(null);
+            if (userRecommended1.charAt(stringLength) == "c" &&
+                userRecommended1.charAt(stringLength + 1) == "o" &&
+                userRecommended1.charAt(stringLength + 2) == "m") {
+
+                var newEmbed = userRecommended1.substring(0, stringLength + 4) + "embed/" + userRecommended1.substring(stringLength + 4);
+
+                recommended1List.push(newEmbed);
+            }
         }
-      }
+    } else {
+        recommended1List.push(null);
     }
 }
 
@@ -48,8 +47,14 @@ function updateUser() {
     $("#artist1").html(artist1List[i]);
     $("#artist2").html(artist2List[i]);
     $("#artist3").html(artist3List[i]);
-    //document.getElementById("spotify-replacement").src = recommended1List[i];
-    console.log(recommended1List[i]);
+
+    if (recommended1List[i] != null) {
+        $("#no-recommended").html("This user recommends:");
+        document.getElementById("spotify-replacement").src = recommended1List[i];
+    } else {
+        $("#no-recommended").html("This user does not recommend anything.");
+        document.getElementById("spotify-replacement").src = "";
+    }
 }
 
 // Sends each document in the "users" collection where the queries match to render().
@@ -88,3 +93,10 @@ function checkIfButtonDisable() {
         document.getElementById("buttonRight").disabled = true;
     }
 }
+
+// "Message" button handler. Adds the currently shown user to the user's messaging system.
+$("#addMessage").on("click", event => {
+    db.collection("groups").doc().set({
+        test: 5
+    });
+});

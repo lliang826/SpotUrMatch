@@ -1,4 +1,3 @@
-
 const msgScreen = document.getElementById("messages")
 const msgForm = document.getElementById("messageForm");
 const msgInput = document.getElementById("msg-input");

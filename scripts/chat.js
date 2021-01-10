@@ -11,7 +11,7 @@ const msgBtn = document.getElementById("msg-btn");
 /* Create a function that reads the user's name from Firebase
 let name="";
 function foo() {
-    
+
 }*/
 
 window.onload = function () {
@@ -23,7 +23,7 @@ window.onload = function () {
             for (var i = 0; i < groups.length; i++) {
                 var newDiv = document.createElement('div');
                 newDiv.addClass('userMatches');
-                newDiv.id = doc.data().group[i];
+                newDiv.id = groups[i];
             }
         })
     })

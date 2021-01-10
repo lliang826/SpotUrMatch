@@ -19,20 +19,29 @@ auth.onAuthStateChanged(token => {
 
     var userInfo = db.collection("users").doc(userLoggedIn.uid);
 
-    userInfo.get().then(function (doc) {
+    userInfo.get().then(function(doc) {
         if (doc.exists) {
             console.log("data:", doc.data().lastSearch);
             userSearch = doc.data().lastSearch;
+            // Sends each document in the "users" collection where the queries match to render().
+            db.collection("users").where("artist1", "==", userSearch).get().then(snap => {
+                snap.forEach(doc => {
+                    queueUser(doc);
+                });
+            });
+            db.collection("users").where("artist2", "==", userSearch).get().then(snap => {
+                snap.forEach(doc => {
+                    queueUser(doc);
+                });
+            });
+            db.collection("users").where("artist3", "==", userSearch).get().then(snap => {
+                snap.forEach(doc => {
+                    queueUser(doc);
+                });
+            });
+            checkIfButtonDisable();
+            updateUser();
         }
-    });
-
-    // Sends each document in the "users" collection where the queries match to render().
-    db.collection("users").where("artist1", "==", "userSearch").get().then(snap => {
-        snap.forEach(doc => {
-            queueUser(doc);
-        });
-        checkIfButtonDisable();
-        updateUser();
     });
 });
 

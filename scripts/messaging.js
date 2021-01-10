@@ -3,10 +3,7 @@ const msgForm = document.getElementById("messageForm");
 const msgInput = document.getElementById("msg-input");
 const msgBtn = document.getElementById("msg-btn");
 
-const db = firebase.database();
-const msgRef = db.ref("/msgs");
-
-var usermessages = db.collection("msgs").doc();
+//var usermessages = db.collection("msgs").doc();
 // db.collection('resources').doc(resourceType).update({
 //    visitCount: firebase.firestore.FieldValue.increment(1)
 
@@ -20,15 +17,10 @@ function foo() {
 msgForm.addEventListener('submit', sendMessage);
 
 function sendMessage(e) {
-    e.preventDefault();
-    const text = msgInput.value;
-
-    if (!text.trim()) return alert('Please type a message'); //no msg submitted
-    const msg = {
-        name: name,
-        text: text
+    var message = msgInput.innerText;
+    let data = {
+        messages: ["hello"]
     };
-
-    msgRef.push(msg);
-    msgInput.value = "";
+    console.log("heard");
+    db.collection("msgs").doc("chatTest").set(data);
 }

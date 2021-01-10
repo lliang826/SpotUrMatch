@@ -1,6 +1,6 @@
 const matches = document.getElementById("connectionsList");
 
-/* 
+/*
 
 Create a function that reads the user's name from Firebase
 let name="";
@@ -9,7 +9,6 @@ function foo() {
 }*/
 
 window.onload = function () {
-    console.log("loaded");
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).onSnapshot(function (snap) {
             for(var i = 0; i < snap.data().group.length; i++) {
@@ -24,7 +23,6 @@ window.onload = function () {
             }
         })
     })
-    console.log("complete");
 }
 
 

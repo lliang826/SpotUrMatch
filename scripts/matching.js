@@ -41,11 +41,10 @@ db.collection("users").where("artist1", "==", "smash mouth").get().then(snap => 
     updateUser();
 });
 
-<<<<<<< HEAD
 var userRecommended = user.recommended1;
 
-db.collection("users").where("recommended1", "==", userRecommended).get().then(function)
-=======
+db.collection("users").where("recommended1", "==", userRecommended).get().then(function() {})
+
 // "Next" button handler.
 $("#buttonRight").on("click", event => {
     i++;
@@ -73,4 +72,3 @@ function checkIfButtonDisable() {
         document.getElementById("buttonRight").disabled = true;
     }
 }
->>>>>>> 8777e19bd6f28383d7156016a0c634d9b375bfc8

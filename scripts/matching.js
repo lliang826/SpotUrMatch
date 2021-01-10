@@ -140,6 +140,6 @@ $("#addMessage").on("click", event => {
         db.collection("users").doc(uidList[i]).update({
             group: firebase.firestore.FieldValue.arrayUnion(doc.id)
         });
-        db.collection("groups").doc(doc.id).collection("msgs").doc().set({});
+        db.collection("groups").doc(doc.id).collection("msgs").set({});
     });
 });

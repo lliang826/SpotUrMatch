@@ -33,3 +33,13 @@
     grid-column: 7 / span 1;
     grid-row: 3 / span 1;
 }
+
+#spotify-widget-container {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.spotify-widget {
+    width: 40vmin;
+    height: 60vmin;
+}

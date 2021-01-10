@@ -1,42 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@1&display=swap');
+#foo {
+    background-color: #191919;
+}
+
+.navbar {
+    background-color: #2c2c2c;
+}
+
 #content {
+
     display: grid;
-    grid-template-columns: 10vw 10vw 10vw 40vw 10vw 10vw 10vw;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 20% 10% 10%;
+    grid-template-rows: 20% 10% 20% 10% 20% 20%;
     gap: 5% 0px;
 }
 
 #about {
-    background-color: grey;
+    color: white;
     margin-bottom: 10%;
     height: 100%;
     width: 100%;
 
     grid-column: 4 / span 1;
-    grid-row: 2 / span 3;
+    grid-row: 2 / span 1;
+}
+
+#username {
+    font-size: 2em;
+    font-family: 'Permanent Marker', cursive;
+    text-align: right;
 }
 
 #songs {
-    background-color: antiquewhite;
+    color: white;
     height: 100%;
     width: 100%;
+    font-family: 'Chau Philomene One', sans-serif;
+    text-align: right;
 
-    grid-column: 3 / span 3;
-    grid-row: 5 / span 1;
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 1;
+}
+
+#addMessage {
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
 }
 
 #buttonLeft {
+    border-radius: 20px;
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
 }
 
 #buttonRight {
-    grid-column: 7 / span 1;
+    border-radius: 20px;
+    grid-column: 9 / span 1;
     grid-row: 3 / span 1;
 }
 
 #spotify-widget-container {
     margin-top: 80px;
     text-align: center;
+    grid-column: 6 / span 1;
+    grid-row: 1 / span 2;
 }
 
 .spotify-widget {

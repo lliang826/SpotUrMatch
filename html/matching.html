@@ -13,11 +13,11 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="foo">
     <!-- Bootstrap navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">SpotUrVibe</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,9 +25,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="#">Settings</a>
                 </div>
             </div>
         </div>
@@ -47,19 +46,19 @@
             <span id="artist3"></span>
         </div>
 
-        <button type="button" id="buttonLeft" class="btn btn-outline-success waves-effect" disabled>Success</button>
+        <button type="button" id="buttonLeft" class="btn btn-outline-success waves-effect" disabled>Previous</button>
 
-        <button type="button" id="buttonRight" class="btn btn-outline-danger waves-effect" disabled>Danger</button>
+        <button type="button" id="buttonRight" class="btn btn-outline-danger waves-effect" disabled>Next</button>
 
-        <button type="button" id="addMessage" class="btn btn-outline-danger waves-effect">Message</button>
-    </div>
+        <button type="button" id="addMessage" class="btn btn-outline-secondary waves-effect">Message</button>
 
-    <!-- Spotify Widget for recommended songs -->
+        <!-- Spotify Widget for recommended songs -->
 
-    <div class="d-flex flex-column" id="spotify-widget-container">
-        <span id="no-recommended">This user recommends:</span>
-        <div><iframe class="spotify-widget" id="spotify-replacement" src=""
-            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+        <div class="d-flex flex-column" id="spotify-widget-container">
+            <span id="no-recommended">This user recommends:</span>
+            <div><iframe class="spotify-widget" id="spotify-replacement" src="" frameborder="0" allowtransparency="true"
+                    allow="encrypted-media"></iframe></div>
+        </div>
     </div>
 
     <!-- Bootstrap Scripts -->

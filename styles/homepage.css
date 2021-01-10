@@ -1,17 +1,40 @@
+body {
+    background-color: #191919;
+}
+
 .search-field-container {
-    margin-right: 30%;
-    margin-left: 30%;
-    margin-top: 100px;
+    margin-right: 35%;
+    margin-left: 35%;
+    justify-content: center;
 }
 
 .search-bar {
     margin-right: 5px;
 }
 
+.btn-text {
+    background-color: #3eb759;
+    color: #fff;
+}
+
+.btn-text:hover {
+    background-color: #8ac797;
+}
+
+.description {
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
 .or {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
+    color: #fff;
+    font-size: 1.5em;
 }
 
 .use-fav-artist-button {

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<title>Messaging Page</title>
+<meta charset="utf-8">
+
+<head>
+    <link rel="stylesheet" href="../styles/chat.css">
+</head>
+
+<body>
+    <div class="chat">
+        <div class="chat-window" id="chat-window">
+            <ul id="messages">
+                <li class="msg">
+                    <span class="msg-span">
+                        <i class="name">Host: </i>Hello how are you!
+                    </span>
+                </li>
+            </ul>
+            <form id="messageForm" autocomplete="off">
+                <input type="text" id="msg-input" placeholder="Enter a message">
+                <button id="msg-btn" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/firebase_api.js"></script>
+</body>
+
+</html>

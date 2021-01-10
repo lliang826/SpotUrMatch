@@ -106,8 +106,12 @@ function checkIfButtonDisable() {
 
 // "Message" button handler. Adds the currently shown user to the user's messaging system.
 $("#addMessage").on("click", event => {
-    db.collection("groups").doc().set({
+    db.collection("groups").add({
         user1: userLoggedIn.uid,
         user2: uidList[i]
+    }).then(doc => {
+        db.collection("users").doc(userLoggedIn.uid).update({
+            group: firebase.firestore.FieldValue.arrayUnion(doc.id)
+        });
     });
 });

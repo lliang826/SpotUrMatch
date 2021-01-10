@@ -1,4 +1,13 @@
+#foo {
+    background-color: #191919;
+}
+
+.navbar {
+    background-color: #2c2c2c;
+}
+
 #content {
+
     display: grid;
     grid-template-columns: 10vw 10vw 10vw 40vw 10vw 10vw 10vw;
     grid-template-rows: 20% 20% 20% 20% 20%;

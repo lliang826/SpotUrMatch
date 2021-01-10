@@ -10,10 +10,30 @@ const recommended1List = [];
 
 // If logged in, gets the currently logged in user and sets it to a variable.
 var userLoggedIn;
+var userSearch;
+
 auth.onAuthStateChanged(token => {
     if (token) {
         userLoggedIn = token;
     }
+
+    var userInfo = db.collection("users").doc(userLoggedIn.uid);
+
+    userInfo.get().then(function (doc) {
+        if (doc.exists) {
+            console.log("data:", doc.data().lastSearch);
+            userSearch = doc.data().lastSearch;
+        }
+    });
+
+    // Sends each document in the "users" collection where the queries match to render().
+    db.collection("users").where("artist1", "==", "userSearch").get().then(snap => {
+        snap.forEach(doc => {
+            queueUser(doc);
+        });
+        checkIfButtonDisable();
+        updateUser();
+    });
 });
 
 function queueUser(doc) {
@@ -66,15 +86,6 @@ function updateUser() {
         document.getElementById("spotify-replacement").src = "";
     }
 }
-
-// Sends each document in the "users" collection where the queries match to render().
-db.collection("users").where("artist1", "==", "smash mouth").get().then(snap => {
-    snap.forEach(doc => {
-        queueUser(doc);
-    });
-    checkIfButtonDisable();
-    updateUser();
-});
 
 // "Next" button handler.
 $("#buttonRight").on("click", event => {

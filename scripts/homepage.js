@@ -19,7 +19,7 @@ $("#searchClick").on("click", event => {
     });
 });
 
-// Gets the user's search string usinig the enter key.
+// Gets the user's search string using the enter key.
 $("#artistField").keypress(function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -31,7 +31,7 @@ $("#artistField").keypress(function (event) {
     }
 });
 
-// Uses the user's fav artist1.
+// Gets the user's artist1.
 $("#useClick").on("click", event => {
     db.collection("users").doc(userLoggedIn.uid).get().then(function (doc) {
         db.collection("users").doc(userLoggedIn.uid).update({

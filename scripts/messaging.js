@@ -31,3 +31,15 @@ msgBtn.onclick = function() {
 function clearText() {
     document.getElementById("msg-input").value = "";
 }
+
+/*window.onbeforeunload = messageClear;
+
+function messageClear() {
+    db.collection("msgs").doc("chatTest").update({
+        messages: firebase.firestore.
+    })
+}*/
+
+function clickedOnNewUser() {
+    
+}

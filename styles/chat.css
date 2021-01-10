@@ -2,11 +2,11 @@ html {
     height: 100%
 }
 body {
-    padding-bottom: 1.2rem;
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
 }  
 .header{
     color:white;
@@ -66,8 +66,9 @@ p, dt{
 
 /*Chat box styling */
 .chat{
-    width: 95%;
+    width: 60%;
     height: 490px;
+    float: right;
     position: relative;
     margin:auto;
 }  
@@ -186,4 +187,26 @@ p, dt{
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#collectionsList {
+    width: 35%;
+    height: 100%;
+    background-color: blue;
+    float:left;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#matchedUser1 {
+    border-right: 1px solid black;
+    width: 35%;
+    grid-row: 1;
+}
+
+#matchedUser2 {
+    border-right: 1px solid black;
+    width: 35%;
+    grid-row: 2;
 }

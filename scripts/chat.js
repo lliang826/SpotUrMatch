@@ -55,7 +55,6 @@ function userInfoPull(groupID, username) {
 }
 
 function renderChat(groupID, username) {
-    console.log(groupID);
     db.collection("groups").doc(groupID).collection("msgs").get().then(snap => {
         snap.forEach(doc => {
             console.log("here!");
